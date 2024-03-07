@@ -4,6 +4,7 @@
 <title>three.js canvas - particles with shapes</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
 <style>
 body {
 	font-family: Monospace;
@@ -21,13 +22,23 @@ body {
 		color: #FFD700; /* 可以自定义颜色 */
 	}
 </style>
-	
+<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var audio = document.getElementById('bgMusic');
+			// 模拟一个简单的点击事件来触发播放
+			document.body.onclick = function() {
+				if (!audio.paused) return;
+				audio.play();
+			};
+		});
+</script>
 </head>
+
 <body>
 <!-- 使用 audio 元素 -->
-<audio id="bgMusic" autoplay loop controls style="display:none;">
+<audio id="bgMusic" loop controls preload="auto">
 	<!-- 提供不同格式以兼容不同浏览器 -->
-	<source src="./徐泡泡 - 你是我的风景 (升调加速).mp3" type="audio/mpeg">
+	<source src="./你是我的风景.mp3" type="audio/mpeg">
   </audio>
 <!-- 在页面中间显示“节日快乐” -->
 <div class="center-text">节日快乐</div>
