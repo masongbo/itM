@@ -17,7 +17,6 @@ body {
 	/* 用于居中显示文字的简单CSS样式 */
 	.center-text {
 		text-align: center;
-		margin-top: 40px; /* 调整这个值以适应你的布局 */
 		font-size: 40px;
 		color: #FFD700; /* 可以自定义颜色 */
 	}
@@ -34,13 +33,28 @@ body {
 		cursor: pointer;
 	}
 </style>
+
+<style>
+	.inline-elements {
+		display: flex;
+		align-items: center; /* 可选：使内容垂直居中 */
+		gap: 550px; /* 可选：设置元素之间的间距 */
+	}
+</style>
+
 </head>
 
 <body>
 
-<button class="play-button" onclick="playAudio()">播放音乐</button>
-<audio id="myAudio" src="./你是我的风景.mp3"></audio>
-<script>
+<div class="inline-elements">
+	<button class="play-button" onclick="playAudio()" >播放音乐</button>
+    <div class="center-text">女神节快乐</div>
+        
+</div>
+
+
+  <audio id="myAudio" src="./你是我的风景.mp3"></audio>
+  <script>
 	  function playAudio() {
 		  var audio = document.getElementById('myAudio');
 		  if (!audio.paused) {
@@ -49,9 +63,10 @@ body {
 			  audio.play();
 		  }
 	  }
-</script>
+  </script>
+
 <!-- 在页面中间显示“节日快乐” -->
-<div class="center-text">女神节快乐</div>
+<!--<div class="center-text" style="display: inline-block;">女神节快乐</div>-->
 
 <script type="text/javascript" src="js/nb.js"></script>
 
