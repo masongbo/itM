@@ -22,16 +22,18 @@ body {
 		color: #FFD700; /* 可以自定义颜色 */
 	}
 </style>
-<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			var audio = document.getElementById('bgMusic');
-			// 模拟一个简单的点击事件来触发播放
-			document.body.onclick = function() {
-				if (!audio.paused) return;
-				audio.play();
-			};
-		});
-</script>
+<style>
+	.play-button {
+		display: block;
+		width: 100px;
+		height: 100px;
+		line-height: 100px;
+		text-align: center;
+		border-radius: 50%;
+		background-color: #ccc;
+		cursor: pointer;
+	}
+</style>
 </head>
 
 <body>
@@ -40,6 +42,10 @@ body {
 	<!-- 提供不同格式以兼容不同浏览器 -->
 	<source src="./你是我的风景.mp3" type="audio/mpeg">
   </audio>
+	
+<!-- 播放按钮 -->
+<div class="play-button" onclick="document.getElementById('bgMusic').play();">播放音乐</div>
+	
 <!-- 在页面中间显示“节日快乐” -->
 <div class="center-text">女神节快乐</div>
 
